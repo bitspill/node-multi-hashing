@@ -29,7 +29,7 @@ void axh_hash(const char* input, char* output, uint32_t len)
     static unsigned char pblank[1];
     uint256 hash1;
     sph_shabal256_init(&ctx_shabal);
-    sph_shabal256 (&ctx_shabal, (pbegin == pend ? pblank : static_cast<const void*>(&pbegin[0])), (pend - pbegin) * sizeof(pbegin[0]));
+    sph_shabal256 (&ctx_shabal, input, len);
     sph_shabal256_close(&ctx_shabal, static_cast<void*>(&hash1));
     M[0] = hash1;
 
