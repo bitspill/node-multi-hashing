@@ -3,6 +3,8 @@
 #include <stdint.h>
 #include <string.h>
 #include <stdio.h>
+#include <vector>
+#include "uint256.h"
 #include "sha3/sph_shabal.h"
 
 void axh_hash(const char* input, char* output, uint32_t len)
