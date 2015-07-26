@@ -59,5 +59,5 @@ void axh_hash(const char* input, char* output, uint32_t len)
         }
     }
 
-    return M[N - 1];
+    output = M[N - 1];
 }
