@@ -26,7 +26,6 @@ void axh_hash(const char* input, char* output, uint32_t len)
 
     std::vector<uint256> M(N);
     sph_shabal256_context ctx_shabal;
-    static unsigned char pblank[1];
     uint256 hash1;
     sph_shabal256_init(&ctx_shabal);
     sph_shabal256 (&ctx_shabal, input, len);
@@ -59,5 +58,5 @@ void axh_hash(const char* input, char* output, uint32_t len)
         }
     }
 
-    output = M[N - 1];
+    memcpy(output, M[N - 1], 32);
 }
